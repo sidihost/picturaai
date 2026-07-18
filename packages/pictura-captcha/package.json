@@ -1,0 +1,17 @@
+{
+  "name": "@pictura/captcha",
+  "version": "1.0.0",
+  "description": "Official Pictura CAPTCHA web + React helpers",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "keywords": ["captcha", "pictura", "bot-protection", "react"],
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=18"
+  }
+}
