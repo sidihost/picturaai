@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, FlaskConical } from 'lucide-react'
+import { ArrowRight, FlaskConical, Star } from 'lucide-react'
 import { PicturaLogo } from './pictura-logo'
+import { GitHubIcon, GITHUB_REPO_URL, useGitHubStars } from './github-star-button'
 
 const links = [
   { href: '/studio', label: 'Studio' },
@@ -17,6 +18,7 @@ const links = [
 
 export function Navbar() {
   const pathname = usePathname()
+  const stars = useGitHubStars()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [mounted, setMounted] = useState(false)
@@ -65,9 +67,24 @@ export function Navbar() {
                 {l.label}
               </Link>
             ))}
+            <a
+              href={GITHUB_REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Star Pictura on GitHub"
+              className="ml-2 inline-flex items-center gap-1.5 rounded-full border border-border px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary/60 hover:text-foreground"
+            >
+              <GitHubIcon className="h-4 w-4" />
+              {stars !== null && (
+                <span className="flex items-center gap-1 text-xs font-semibold">
+                  <Star className="h-3 w-3 fill-current text-primary" />
+                  {stars.toLocaleString()}
+                </span>
+              )}
+            </a>
             <Link
               href="/studio"
-              className="group ml-3 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90 active:scale-[0.97]"
+              className="group ml-2 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90 active:scale-[0.97]"
             >
               Try Pictura
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -132,6 +149,30 @@ export function Navbar() {
                   </motion.div>
                 ))}
               </div>
+
+              {/* GitHub link */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.25, delay: 0.04 * links.length }}
+              >
+                <a
+                  href={GITHUB_REPO_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="flex items-center gap-3 rounded-xl px-4 py-3.5 text-[15px] font-medium text-foreground active:bg-secondary/60"
+                >
+                  <GitHubIcon className="h-[18px] w-[18px]" />
+                  Star on GitHub
+                  {stars !== null && (
+                    <span className="flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
+                      <Star className="h-3 w-3 fill-current" />
+                      {stars.toLocaleString()}
+                    </span>
+                  )}
+                </a>
+              </motion.div>
 
               {/* CTA button */}
               <motion.div

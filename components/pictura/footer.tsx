@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { PicturaIcon } from './pictura-logo'
+import { GitHubIcon, GITHUB_REPO_URL } from './github-star-button'
 
 // Social Icons as components
 const XIcon = ({ className = "h-4 w-4" }: { className?: string }) => (
@@ -25,7 +26,7 @@ export function Footer() {
               <span className="text-lg font-bold tracking-tight text-foreground">Pictura</span>
             </span>
             <p className="mt-3 max-w-[240px] text-sm leading-relaxed text-muted-foreground">
-              Non-profit AI image generation by Imoogle Labs. Free and accessible to everyone.
+              Non-profit AI image generation by Imoogle Labs. Free, open source, and accessible to everyone.
             </p>
             
             {/* Social Links */}
@@ -49,6 +50,15 @@ export function Footer() {
                   aria-label="Join our Telegram"
                 >
                   <TelegramIcon className="h-4 w-4" />
+                </a>
+                <a
+                  href={GITHUB_REPO_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                  aria-label="Star us on GitHub"
+                >
+                  <GitHubIcon className="h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -97,6 +107,10 @@ export function Footer() {
             </Link>
             <Link href="/support" className="text-sm text-foreground/70 transition-colors hover:text-primary">Support Us</Link>
             <Link href="/report" className="text-sm text-foreground/70 transition-colors hover:text-primary">Report a Bug</Link>
+            <a href={GITHUB_REPO_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-foreground/70 transition-colors hover:text-primary">
+              GitHub
+              <span className="rounded bg-primary/10 px-1.5 py-0.5 font-mono text-[10px] text-primary font-semibold">OSS</span>
+            </a>
           </div>
 
           <div className="flex flex-col gap-3">
