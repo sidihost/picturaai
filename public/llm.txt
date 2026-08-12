@@ -1,0 +1,50 @@
+# Pictura
+
+> Pictura is an open-source AI studio for fast text-to-image, image-to-image, video, and music generation using advanced diffusion and transformer models. It provides detailed model descriptions, tutorials, and research insights for developers, researchers, and artists working with AI-powered visual and audio content creation.
+
+## Overview
+
+Pictura combines a multi-stage diffusion architecture with semantic encoding, style-conditioned latent diffusion, and super-resolution modules to deliver high-quality generative output. The platform offers a user-friendly interface that requires no prompt engineering, alongside API access for developers. It is free during beta testing phases, with paid plans and self-hosting options for higher resolutions and API usage.
+
+## Models
+
+- Pictura pi-1.0: Basic text-to-image and image-to-image generation at 1024x1024 resolution.
+- Pictura pi-1.5-turbo: Enhanced fidelity and faster inference, supporting up to 2048px with improved prompt adherence.
+- Pictura pi-2.0: Next-generation architecture with multi-modal understanding, style memory, and scene composition.
+
+## Capabilities
+
+- Text to Image: Generate visuals from descriptive prompts.
+- Image to Image: Transform existing images based on user descriptions.
+- Text to Video: Create cinematic videos from a single sentence, with camera movement and scene continuity.
+- Music Generation (PicturaSound): Produce full tracks from prompts, including vocals, instruments, and arrangement. Tracks are downloadable and customizable.
+
+## Architecture and Safety
+
+Pictura uses a multi-stage diffusion system with semantic encoding, style-conditioned latent diffusion, and super-resolution modules. Adaptive routing directs prompts to the appropriate model stage. Content safety filters and classifiers are embedded within the architecture to prevent undesirable outputs.
+
+## Comparison and Pricing
+
+Pictura is compared with platforms such as DALL-E 3, Midjourney, and Stable Diffusion. Usage is free during beta; paid plans or self-hosting are required for higher resolutions or API access.
+
+## Optional
+
+- PicturaCAPTCHA: Free, privacy-focused bot protection service for form and API security, with easy integration.
+
+## Links
+
+- [Home](https://picturaai.sbs/)
+- [Studio](https://picturaai.sbs/studio)
+- [PicturaSound Music Demo](https://picturaai.sbs/sound)
+- [Models and Comparison](https://picturaai.sbs/models)
+- [Research Overview](https://picturaai.sbs/research)
+- [Pricing](https://picturaai.sbs/pricing)
+- [Features](https://picturaai.sbs/features)
+- [About](https://picturaai.sbs/about)
+- [Blog](https://picturaai.sbs/blog)
+- [Developers](https://picturaai.sbs/developers)
+- [API Documentation](https://picturaai.sbs/api-docs)
+- [PicturaCAPTCHA](https://picturaai.sbs/captcha)
+- [PicturaCAPTCHA Docs](https://picturaai.sbs/captcha/docs)
+- [Support](https://picturaai.sbs/support)
+- [GitHub Repository](https://github.com/sidihost/picturaai)
